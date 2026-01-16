@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogue Pharmacy | Your Health, Our Priority</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2 text-emerald-600">
+                        <i class="fas fa-hand-holding-medical text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight text-slate-900">Dialogue <span class="text-emerald-600">Pharmacy</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-emerald-600 font-semibold border-b-2 border-emerald-600">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-emerald-600 transition">About</a>
+                    <a href="services.html" class="text-slate-600 hover:text-emerald-600 transition">Services</a>
+                    <a href="contact.html" class="text-slate-600 hover:text-emerald-600 transition">Contact</a>
+                    <a href="staff-login.html" class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">Staff Login</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-emerald-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-emerald-600 font-semibold">Home</a>
+                <a href="about.html" class="text-slate-600">About</a>
+                <a href="services.html" class="text-slate-600">Services</a>
+                <a href="contact.html" class="text-slate-600">Contact</a>
+                <a href="staff-login.html" class="text-emerald-600 font-bold">Staff Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-white pt-16 pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl">
+                        Professional Care <span class="text-emerald-600">You Can Trust.</span>
+                    </h1>
+                    <p class="mt-3 text-base text-slate-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                        At Dialogue Pharmacy, we are committed to providing personalized healthcare solutions and high-quality medications for you and your family.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0 flex flex-col sm:flex-row gap-4">
+                        <a href="services.html" class="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-emerald-700 transition flex items-center justify-center">
+                            Our Services
+                        </a>
+                        <a href="contact.html" class="bg-white text-emerald-600 border-2 border-emerald-600 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition flex items-center justify-center">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-3xl shadow-2xl overflow-hidden">
+                        <img class="w-full object-cover h-96" src="https://picsum.photos/800/600?random=1" alt="Pharmacy Professional">
+                        <div class="absolute inset-0 bg-emerald-600 mix-blend-multiply opacity-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Info Cards -->
+    <section class="-mt-16 relative z-20 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-emerald-500">
+                    <i class="fas fa-clock text-emerald-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Opening Hours</h3>
+                    <ul class="text-slate-600 space-y-1">
+                        <li class="flex justify-between"><span>Mon - Fri:</span> <span>8:00 AM - 9:00 PM</span></li>
+                        <li class="flex justify-between"><span>Saturday:</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li class="flex justify-between text-red-500 font-medium"><span>Sunday:</span> <span>Closed</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-500">
+                    <i class="fas fa-map-marker-alt text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Our Location</h3>
+                    <p class="text-slate-600">123 Health Boulevard, Medical Center District, NY 10001</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-amber-500">
+                    <i class="fas fa-phone-alt text-amber-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Emergency Contact</h3>
+                    <p class="text-slate-600">Call us anytime for urgent queries:</p>
+                    <p class="text-2xl font-bold text-slate-900 mt-2">+1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notices Area (Populated by JS) -->
+    <section id="notices-section" class="py-12 bg-slate-100 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                <i class="fas fa-bullhorn text-emerald-600 mr-2"></i> Important Notices
+            </h2>
+            <div id="notices-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected via main.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-emerald-600 font-bold tracking-widest uppercase text-sm">Our Expertise</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mt-2 mb-12">Comprehensive Health Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="group p-6">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                        <i class="fas fa-file-prescription text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Prescription Refills</h3>
+                    <p class="text-slate-600">Quick and hassle-free prescription transfers and refills managed by our clinical experts.</p>
+                </div>
+                <div class="group p-6">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fas fa-pills text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">OTC Medications</h3>
+                    <p class="text-slate-600">A wide range of over-the-counter medications for everyday ailments and wellness needs.</p>
+                </div>
+                <div class="group p-6">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Health Consultations</h3>
+                    <p class="text-slate-600">Private consultations with our pharmacists for drug interactions and chronic disease management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 text-white mb-6">
+                        <i class="fas fa-hand-holding-medical text-2xl"></i>
+                        <span class="font-bold text-2xl tracking-tight">Dialogue Pharmacy</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm">
+                        Dedicated to your well-being. We provide more than just medicine; we provide a community of care.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="about.html" class="hover:text-white">Our Mission</a></li>
+                        <li><a href="services.html" class="hover:text-white">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="staff-login.html" class="hover:text-white">Staff Dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact</h4>
+                    <p class="text-slate-400">123 Health Blvd, NY</p>
+                    <p class="text-slate-400 mt-2">+1 (555) 123-4567</p>
+                    <p class="text-slate-400 mt-2">info@dialoguepharmacy.com</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+                &copy; 2024 Dialogue Pharmacy. All rights reserved. Built for professional health excellence.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

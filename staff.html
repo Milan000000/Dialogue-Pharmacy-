@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard | Dialogue Pharmacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-100 min-h-screen">
+    <!-- Auth Guard - Handled in JS but hidden by default -->
+    <div id="auth-guard" class="hidden">
+        <!-- Top Nav -->
+        <nav class="bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-emerald-600 text-xl"></i>
+                    <span class="font-bold text-slate-900">Staff Control Center</span>
+                </div>
+                <button id="logout-btn" class="bg-red-50 text-red-600 px-4 py-2 rounded-lg font-bold hover:bg-red-600 hover:text-white transition">
+                    Logout
+                </button>
+            </div>
+        </nav>
+
+        <main class="max-w-7xl mx-auto p-4 sm:p-8">
+            <header class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-extrabold text-slate-900">Dashboard</h1>
+                    <p class="text-slate-500">Manage pharmacy inventory, services, and public notices.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="window.location.reload()" class="p-3 bg-white border border-slate-200 rounded-xl text-slate-600 hover:bg-slate-50">
+                        <i class="fas fa-sync"></i>
+                    </button>
+                    <a href="index.html" target="_blank" class="px-4 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-700 flex items-center">
+                        <i class="fas fa-external-link-alt mr-2"></i> View Site
+                    </a>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Manage Products -->
+                <div class="lg:col-span-2 space-y-8">
+                    <section class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+                            <h2 class="text-xl font-bold text-slate-900">Product Inventory</h2>
+                            <button id="add-product-btn" class="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-emerald-700 hover:text-white transition">
+                                <i class="fas fa-plus mr-1"></i> New Product
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-slate-50 text-slate-500 text-sm uppercase">
+                                    <tr>
+                                        <th class="px-6 py-4">Name</th>
+                                        <th class="px-6 py-4">Category</th>
+                                        <th class="px-6 py-4">Price</th>
+                                        <th class="px-6 py-4 text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="products-table-body" class="divide-y divide-slate-100">
+                                    <!-- Rows injected by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="p-6 border-b border-slate-100">
+                            <h2 class="text-xl font-bold text-slate-900">Manage Notices</h2>
+                        </div>
+                        <div class="p-6">
+                            <form id="notice-form" class="flex gap-4 mb-6">
+                                <input type="text" id="notice-text" required placeholder="Enter a public announcement..." class="flex-1 px-4 py-2 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-emerald-500">
+                                <button type="submit" class="bg-slate-900 text-white px-6 py-2 rounded-xl font-bold hover:bg-slate-800 transition">
+                                    Post
+                                </button>
+                            </form>
+                            <div id="notices-list" class="space-y-3">
+                                <!-- Notices injected by JS -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Product Form Sidebar -->
+                <div class="lg:col-span-1">
+                    <div id="product-form-container" class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 sticky top-24 hidden">
+                        <h3 id="form-title" class="text-lg font-bold text-slate-900 mb-6">Add New Product</h3>
+                        <form id="product-form" class="space-y-4">
+                            <input type="hidden" id="edit-id">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Product Name</label>
+                                <input type="text" id="prod-name" required class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Category</label>
+                                <select id="prod-category" class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none">
+                                    <option value="Medication">Medication</option>
+                                    <option value="Supplements">Supplements</option>
+                                    <option value="Personal Care">Personal Care</option>
+                                    <option value="Equipment">Equipment</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Price ($)</label>
+                                <input type="number" id="prod-price" step="0.01" required class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none">
+                            </div>
+                            <div class="pt-4 flex gap-2">
+                                <button type="submit" class="flex-1 bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition">Save Product</button>
+                                <button type="button" id="cancel-form" class="bg-slate-100 text-slate-600 px-4 py-3 rounded-xl hover:bg-slate-200 transition">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals & Feedback -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-full shadow-2xl transition-opacity opacity-0 pointer-events-none z-[100]">
+        Action completed successfully.
+    </div>
+
+    <script src="js/staff-dashboard.js"></script>
+</body>
+</html>
